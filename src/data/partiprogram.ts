@@ -274,7 +274,7 @@ export const chapters: Chapter[] = [
       {
         title: "EU",
         paragraphs: [
-          "EU accepteres som ramme for handel, fri bev\u00e6gelighed og f\u00e6lles regulering, hvor det giver mening. Men yderligere afgivelse af suver\u00e6nitet til EU afvises. Danmark skal bevare kontrol over udl\u00e6ndingepolitik, velf\u00e6rdspolitik, skattepolitik og kulturpolitik. De danske EU-forbehold afspejler en sund skepsis og b\u00f8r fastholdes, indtil der er bred folkelig opbakning til at \u00e6ndre dem.",
+          "EU accepteres som ramme for handel, fri bev\u00e6gelighed og f\u00e6lles regulering, hvor det giver mening. Men yderligere afgivelse af suver\u00e6nitet til EU afvises. Danmark skal bevare kontrol over udl\u00e6ndingepolitik, velf\u00e6rdspolitik, skattepolitik og kulturpolitik. De danske EU-forbehold afspejler en sund demokratisk skepsis og skal beskyttes mod den nuv\u00e6rende asymmetri, hvor et ja er permanent, men et nej altid kan tages op igen. Afskaffelse af et forbehold skal kr\u00e6ve et kvalificeret flertal i Folketinget forud for en folkeafstemning, og folkeafstemningen selv skal kr\u00e6ve et kvalificeret flertal af de afgivne stemmer. Suver\u00e6nitetsafgivelse er irreversibel og skal behandles derefter. S\u00e5 l\u00e6nge denne beskyttelse ikke er p\u00e5 plads, b\u00f8r forbeholdene fastholdes.",
         ],
       },
       {
