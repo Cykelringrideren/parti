@@ -26,7 +26,7 @@ export const chapters: Chapter[] = [
     slug: "ideologisk-fundament",
     title: "Ideologisk fundament",
     summary:
-      "Partiets ideologiske grundlag hviler p\u00e5 nordisk exceptionalisme, social liberalisme, national konservatisme og velf\u00e6rdsstaten som frihedsprojekt, samt erkendelsen af et dobbelt trusselsbillede.",
+      "Partiets ideologiske grundlag hviler p\u00e5 nordisk exceptionalisme, social liberalisme, national konservatisme og velf\u00e6rdsstaten som frihedsprojekt, forenet i et princip om kulturelt selvforsvar mod p\u00e5virkninger der undergraver nordiske v\u00e6rdier.",
     content: [],
     subheadings: [
       {
