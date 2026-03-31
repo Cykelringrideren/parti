@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProgramCard from '../../components/ProgramCard.astro';
+import { chapters } from '../../data/partiprogram';
+---
+
+<Layout title="Partiprogram" description="Læs Læs PLACEHOLDER NAVNs partiprogram, vores politik for frihed, tryghed og fællesskab.">
+  <Header />
+  <main>
+    <section class="program-header">
+      <div class="container">
+        <p class="section-label">Partiprogram</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Partiprogram</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          PLACEHOLDER NAVNs partiprogram i 14 kapitler. Klik på et kapitel for at læse mere.
+        </p>
+        <a href="/partiprogram.pdf" download class="btn btn--primary" style="margin-top: 24px;">Hent partiprogram (PDF)</a>
+      </div>
+    </section>
+
+    <section class="program-list">
+      <div class="container">
+        {chapters.map(chapter => (
+          <ProgramCard
+            number={chapter.number}
+            title={chapter.title}
+            summary={chapter.summary}
+            slug={chapter.slug}
+          />
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .program-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .program-list {
+    padding-bottom: 80px;
+  }
+</style>

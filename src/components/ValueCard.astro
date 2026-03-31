@@ -1,0 +1,50 @@
+---
+interface Props {
+  color: 'red' | 'blue' | 'green';
+  title: string;
+  description: string;
+}
+
+const { color, title, description } = Astro.props;
+
+const colorMap = {
+  red: 'var(--color-red)',
+  blue: 'var(--color-blue)',
+  green: 'var(--color-green)',
+};
+---
+
+<div class="value-card">
+  <div class="value-card__bar" style={`background: ${colorMap[color]}`}></div>
+  <h3 class="value-card__title">{title}</h3>
+  <p class="value-card__desc">{description}</p>
+</div>
+
+<style>
+  .value-card {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  .value-card__bar {
+    width: 32px;
+    height: 3px;
+    margin-bottom: 20px;
+  }
+
+  .value-card__title {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+  }
+
+  .value-card__desc {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--color-text);
+    font-weight: 300;
+  }
+</style>

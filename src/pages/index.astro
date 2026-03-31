@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import SignupForm from '../components/SignupForm.astro';
+---
+
+<Layout title="Forside" description="PLACEHOLDER NAVN er et parti for frihed, tryghed og fællesskab. Beskyttelse og videreudvikling af den nordiske model.">
+  <Header />
+  <main>
+    <Hero />
+
+    <!-- Tri-color band -->
+    <div class="band-tri" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Vision / kerneværdier -->
+    <section class="values">
+      <div class="container--wide fundament__inner">
+        <div class="fundament__header" data-fade>
+          <p class="section-label">Kerneværdier</p>
+          <h2 class="section-title">Hvad vi tror på</h2>
+          <div class="divider-tri"><span></span><span></span><span></span></div>
+        </div>
+        <div class="fundament__grid">
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-red)"></div>
+            <h3 class="fundament__card-title">Fællesskab</h3>
+            <p class="fundament__card-desc">Den sociale kontrakt og den kulturelle sammenhængskraft, der binder samfundet sammen. Velfærdsstaten som frihedsprojekt.</p>
+          </div>
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-blue)"></div>
+            <h3 class="fundament__card-title">Frihed</h3>
+            <p class="fundament__card-desc">Individuel frihed, retssikkerhed og lige muligheder. Enhver borger har ret til at leve sit liv inden for fællesskabets rammer.</p>
+          </div>
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-green)"></div>
+            <h3 class="fundament__card-title">Natur</h3>
+            <p class="fundament__card-desc">Beskyttelse af dansk natur, rent drikkevand og biodiversitet. Forankret i konkret kærlighed til det nære, ikke abstrakt aktivisme.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote section -->
+    <section class="quote-section">
+      <div class="container">
+        <div class="quote-block" data-fade>
+          <div class="quote-block__bars" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <blockquote class="quote-block__text">
+            Vi tror på, at personlig frihed og kulturel bevarelse ikke er modsætninger. De er hinandens forudsætninger.
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Det vi bygger på -->
+    <section class="fundament">
+      <div class="container--wide fundament__inner">
+        <div class="fundament__header" data-fade>
+          <p class="section-label">Grundværdier</p>
+          <h2 class="section-title">Det vi bygger på</h2>
+          <div class="divider-tri"><span></span><span></span><span></span></div>
+        </div>
+        <div class="fundament__grid">
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-red)"></div>
+            <h3 class="fundament__card-title">Social liberalisme</h3>
+            <p class="fundament__card-desc">Individets rettigheder er ukrænkelige. Staten sikrer lige muligheder, så frihed ikke kun er for de privilegerede.</p>
+          </div>
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-dark)"></div>
+            <h3 class="fundament__card-title">National konservatisme</h3>
+            <p class="fundament__card-desc">Dansk kultur og nordiske institutioner er fundamentet for vores frihed. De fortjener aktiv beskyttelse.</p>
+          </div>
+          <div class="fundament__card" data-fade>
+            <div class="fundament__card-bar" style="background: var(--color-green)"></div>
+            <h3 class="fundament__card-title">Grøn forankring</h3>
+            <p class="fundament__card-desc">Dansk natur, rent drikkevand og levende biodiversitet er vores arv og vores ansvar over for kommende generationer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section class="cta-section">
+      <div class="container cta-section__inner">
+        <p class="section-label cta-section__label" data-fade>Deltag</p>
+        <h2 class="cta-section__title" data-fade>Vil du være med?</h2>
+        <p class="cta-section__desc" data-fade>
+          Vær med til at forme fremtidens Danmark. Bliv medlem af PLACEHOLDER NAVN eller hold dig opdateret via vores nyhedsbrev.
+        </p>
+        <div class="cta-section__actions" data-fade>
+          <a href="#bliv-medlem" class="btn btn--primary-filled">Bliv medlem</a>
+          <a href="/partiprogram" class="btn btn--primary">Læs partiprogrammet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup forms -->
+    <section id="bliv-medlem" class="signup-section">
+      <div class="container">
+        <div class="signup-grid">
+          <SignupForm variant="medlem" />
+          <SignupForm variant="nyhedsbrev" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('[data-fade]').forEach(el => observer.observe(el));
+</script>
+
+<style>
+  /* Scroll fade-in */
+  [data-fade] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  [data-fade].visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Tri-color band */
+  .band-tri {
+    display: flex;
+    height: 5px;
+  }
+  .band-tri span { flex: 1; }
+  .band-tri span:nth-child(1) { background: var(--color-red); }
+  .band-tri span:nth-child(2) { background: var(--color-blue); }
+  .band-tri span:nth-child(3) { background: var(--color-green); }
+
+  /* Values / vision */
+  .values {
+    padding: 88px 0;
+    background: var(--color-bg-alt);
+  }
+
+  /* Quote section */
+  .quote-section {
+    background: var(--color-dark);
+    padding: 100px 0;
+  }
+
+  .quote-block {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .quote-block__bars {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  .quote-block__bars span {
+    width: 4px;
+    height: 32px;
+  }
+
+  .quote-block__bars span:nth-child(1) { background: var(--color-red); }
+  .quote-block__bars span:nth-child(2) { background: var(--color-blue); }
+  .quote-block__bars span:nth-child(3) { background: var(--color-green); }
+
+  .quote-block__text {
+    font-family: var(--font-serif);
+    font-size: clamp(20px, 3.5vw, 32px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--color-bg);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+
+  /* Det vi bygger på */
+  .fundament {
+    background: var(--color-bg-alt);
+    padding: 88px 0;
+  }
+
+  .fundament__inner {
+    padding-left: var(--container-pad);
+    padding-right: var(--container-pad);
+  }
+
+  .fundament__header {
+    max-width: var(--container-max);
+    margin: 0 auto 64px;
+  }
+
+  .fundament__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    max-width: var(--container-max);
+    margin: 0 auto;
+  }
+
+  .fundament__card {
+    padding: 32px 0;
+  }
+
+  .fundament__card-bar {
+    width: 32px;
+    height: 2px;
+    margin-bottom: 24px;
+  }
+
+  .fundament__card-title {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 14px;
+  }
+
+  .fundament__card-desc {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--color-text);
+    font-weight: 300;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--color-bg-alt);
+    padding: 88px 0;
+  }
+
+  .cta-section__inner {
+    text-align: center;
+  }
+
+  .cta-section__label {
+    color: var(--color-red);
+  }
+
+  .cta-section__title {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    color: var(--color-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .cta-section__desc {
+    font-family: var(--font-serif);
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 300;
+    color: var(--color-text);
+    max-width: 520px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  .cta-section__actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Signup */
+  .signup-section {
+    padding: 88px 0;
+  }
+
+  .signup-grid {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .signup-grid > :global(*) {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  @media (max-width: 640px) {
+    .values, .policy, .cta-section, .signup-section {
+      padding: 56px 0;
+    }
+    .quote-section { padding: 56px 0; }
+    .cta-section__actions { flex-direction: column; align-items: center; }
+  }
+</style>

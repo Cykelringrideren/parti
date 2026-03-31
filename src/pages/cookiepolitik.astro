@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Cookiepolitik" description="Cookiepolitik for PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Juridisk</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Cookiepolitik</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="container">
+        <div class="legal-body">
+          <h2>Hvad er cookies?</h2>
+          <p>Cookies er små tekstfiler, der gemmes på din computer, tablet eller mobiltelefon, når du besøger en hjemmeside. Cookies bruges til at huske dine indstillinger og til at forstå, hvordan besøgende bruger hjemmesiden.</p>
+
+          <h2>Hvilke cookies bruger vi?</h2>
+          <p>Vi bruger kun nødvendige cookies, der er essentielle for at hjemmesiden fungerer korrekt. Vi anvender ikke tredjepartscookies til markedsføring eller sporing.</p>
+
+          <h2>Nødvendige cookies</h2>
+          <p>Disse cookies er nødvendige for, at hjemmesiden kan fungere og kan ikke slås fra. De sættes typisk som svar på handlinger, du har foretaget, f.eks. indstilling af privatlivsindstillinger eller udfyldelse af formularer.</p>
+
+          <h2>Samtykke</h2>
+          <p>Ved at bruge denne hjemmeside accepterer du brugen af nødvendige cookies. Du kan til enhver tid slette cookies via din browsers indstillinger.</p>
+
+          <h2>Kontakt</h2>
+          <p>Har du spørgsmål til vores brug af cookies, kan du kontakte os på <strong>kontakt@PLACEHOLDERNAVN.dk</strong>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .legal-content {
+    padding-bottom: 88px;
+  }
+
+  .legal-body {
+    max-width: 640px;
+  }
+
+  .legal-body h2 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  .legal-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-body p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+</style>

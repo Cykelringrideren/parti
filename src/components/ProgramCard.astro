@@ -1,0 +1,59 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  summary: string;
+  slug: string;
+}
+
+const { number, title, summary, slug } = Astro.props;
+---
+
+<a href={`/partiprogram/${slug}`} class="program-card">
+  <span class="program-card__number">{number}</span>
+  <div>
+    <h3 class="program-card__title">{title}</h3>
+    <p class="program-card__summary">{summary}</p>
+  </div>
+</a>
+
+<style>
+  .program-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: padding-left 0.2s;
+  }
+
+  .program-card:hover {
+    padding-left: 8px;
+    text-decoration: none;
+  }
+
+  .program-card__number {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-red);
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .program-card__title {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 6px;
+  }
+
+  .program-card__summary {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-weight: 300;
+  }
+</style>

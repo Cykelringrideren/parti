@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Presse" description="Pressemateriale fra PLACEHOLDER NAVN: logo, pressefotos og standardtekster.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Presse</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Pressemateriale</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          Her finder journalister og medier logo, pressefotos og standardtekster om PLACEHOLDER NAVN.
+        </p>
+      </div>
+    </section>
+
+    <section class="presse-content">
+      <div class="container">
+        <div class="presse-section">
+          <h2 class="presse-heading">Logo</h2>
+          <p class="body-text">Download logoet i det format, der passer til dit medie. SVG anbefales til digitale formater. PNG bruges til e-mail og præsentationer. Print-versionen er til tryk.</p>
+
+          <div class="logo-previews">
+            <div class="logo-preview logo-preview--light">
+              <img src="/logo/logo-fuld-lys-outlined.svg" alt="PLACEHOLDER NAVN logo, lys baggrund" />
+            </div>
+            <div class="logo-preview logo-preview--dark">
+              <img src="/logo/logo-fuld-moerk-outlined.svg" alt="PLACEHOLDER NAVN logo, mørk baggrund" />
+            </div>
+          </div>
+
+          <div class="download-grid">
+            <div class="download-group">
+              <p class="download-group__label">Lys baggrund</p>
+              <a href="/logo/logo-fuld-lys-outlined.svg" download class="download-link">SVG</a>
+              <a href="/logo/logo-fuld-lys-outlined-1280.png" download class="download-link">PNG 1280px</a>
+            </div>
+            <div class="download-group">
+              <p class="download-group__label">Mørk baggrund</p>
+              <a href="/logo/logo-fuld-moerk-outlined.svg" download class="download-link">SVG</a>
+              <a href="/logo/logo-fuld-moerk-outlined-1280.png" download class="download-link">PNG 1280px</a>
+            </div>
+            <div class="download-group">
+              <p class="download-group__label">Print</p>
+              <a href="/logo/logo-print-outlined.svg" download class="download-link">SVG</a>
+              <a href="/logo/logo-print-outlined-2400.png" download class="download-link">PNG 2400px</a>
+            </div>
+            <div class="download-group">
+              <p class="download-group__label">Ikon</p>
+              <a href="/logo/logo-ikon.svg" download class="download-link">SVG</a>
+              <a href="/logo/logo-ikon-512.png" download class="download-link">PNG 512px</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="presse-section">
+          <h2 class="presse-heading">Pressefotos</h2>
+          <p class="body-text">Officielle pressefotos af partiets ledelse og kandidater.</p>
+          <p class="presse-note">Pressefotos gøres tilgængelige snart.</p>
+        </div>
+
+        <div class="presse-section">
+          <h2 class="presse-heading">Om PLACEHOLDER NAVN</h2>
+          <p class="body-text">
+            PLACEHOLDER NAVN er et dansk politisk parti, der forener social liberalisme, national konservatisme og grøn forankring. Partiet arbejder for at beskytte og videreudvikle den nordiske samfundsmodel med fokus på personlig frihed, kulturel sammenhængskraft og beskyttelse af dansk natur.
+          </p>
+        </div>
+
+        <div class="presse-section">
+          <h2 class="presse-heading">Pressekontakt</h2>
+          <p class="body-text">
+            For pressehenvendelser, kontakt os på <strong>kontakt@PLACEHOLDERNAVN.dk</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .presse-content {
+    padding-bottom: 88px;
+  }
+
+  .presse-section {
+    max-width: 640px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .presse-section:last-child {
+    border-bottom: none;
+  }
+
+  .presse-heading {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+  }
+
+  .presse-note {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--color-muted);
+    font-style: italic;
+    margin-top: 12px;
+  }
+
+  .logo-previews {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 24px;
+    margin-bottom: 20px;
+    max-width: 560px;
+  }
+
+  .logo-preview {
+    padding: 32px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-preview--light {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+  }
+
+  .logo-preview--dark {
+    background: var(--color-dark);
+  }
+
+  .logo-preview img {
+    height: 36px;
+    width: auto;
+  }
+
+  .download-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 560px;
+  }
+
+  .download-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 120px;
+  }
+
+  .download-group__label {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 4px;
+  }
+
+  .download-link {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-blue);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .download-link::before {
+    content: '↓';
+    font-size: 11px;
+  }
+
+  .download-link:hover {
+    text-decoration: underline;
+  }
+</style>

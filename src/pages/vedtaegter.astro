@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Vedtægter" description="PLACEHOLDER NAVNs vedtægter og organisationsstruktur.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Vedtægter</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Vedtægter og organisation</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="vedtaegter-content">
+      <div class="container">
+        <div class="vedtaegter-placeholder">
+          <p class="body-text">
+            PLACEHOLDER NAVNs vedtægter og organisationsstruktur vil blive offentliggjort her, når de er vedtaget af generalforsamlingen.
+          </p>
+          <p class="body-text" style="margin-top: 16px;">
+            Har du spørgsmål om organisationen? <a href="/kontakt">Kontakt os</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .vedtaegter-content {
+    padding-bottom: 88px;
+  }
+
+  .vedtaegter-placeholder {
+    max-width: 640px;
+    padding: 40px;
+    background: var(--color-bg-alt);
+  }
+</style>

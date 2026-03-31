@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Om os" description="Lær mere om PLACEHOLDER NAVN: vores historie, ideologiske fundament og hvorfor vi eksisterer.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Om os</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Hvem er PLACEHOLDER NAVN?</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="container">
+        <div class="about-block">
+          <h2 class="about-heading">Vores historie</h2>
+          <p class="body-text">
+            PLACEHOLDER NAVN blev grundlagt ud fra en overbevisning om, at den nordiske samfundsmodel fortjener aktiv beskyttelse og videreudvikling. Vi så et politisk landskab, hvor ingen eksisterende partier formåede at forene individuel frihed med kulturel sammenhængskraft, og hvor den unikke skandinaviske balance mellem personlig frihed, social lighed og høj gensidig tillid var under pres fra flere sider.
+          </p>
+          <p class="body-text">
+            Vi samlede os som borgere fra forskellige baggrunde, men med en fælles forpligtelse over for det danske fællesskab og de værdier, der har gjort Norden til noget enestående i verden.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h2 class="about-heading">Ideologisk fundament</h2>
+          <p class="body-text">
+            PLACEHOLDER NAVN hviler på tre søjler: social liberalisme, national konservatisme og grøn forankring. Vi tror på, at individets rettigheder er ukrænkelige, at dansk kultur og nordiske institutioner udgør fundamentet for vores frihed, og at beskyttelse af dansk natur er en forpligtelse over for kommende generationer.
+          </p>
+          <p class="body-text">
+            Vi afviser, at man skal vælge mellem frihed og fællesskab. De er hinandens forudsætninger.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h2 class="about-heading">Hvorfor vi eksisterer</h2>
+          <p class="body-text">
+            Den skandinaviske model er truet fra to sider: fra religiøs konservatisme, der importerer normer uforenelige med nordisk frihed og ligestilling, og fra amerikanisering, der underminerer velfærdsstaten og den tillidsbaserede danske offentlighed.
+          </p>
+          <p class="body-text">
+            PLACEHOLDER NAVN eksisterer for at give et politisk hjem til dem, der vil beskytte det bedste ved Danmark og udvikle det videre.
+          </p>
+        </div>
+
+        <div class="about-cta">
+          <a href="/partiprogram" class="btn btn--primary">Læs partiprogrammet</a>
+          <a href="/mennesker" class="btn btn--secondary">Mød vores mennesker</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .about-content {
+    padding-bottom: 88px;
+  }
+
+  .about-block {
+    margin-bottom: 48px;
+    max-width: 640px;
+  }
+
+  .about-heading {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+  }
+
+  .about-block .body-text {
+    margin-bottom: 16px;
+  }
+
+  .about-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+  }
+</style>

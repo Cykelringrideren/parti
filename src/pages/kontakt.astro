@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kontakt" description="Kontakt PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="kontakt">
+      <div class="container">
+        <p class="section-label">Kontakt</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Kontakt os</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <div class="kontakt__content">
+          <p class="body-text">
+            Har du spørgsmål, ideer eller ønsker du at engagere dig i PLACEHOLDER NAVN? Vi hører gerne fra dig.
+          </p>
+          <div class="kontakt__info">
+            <div class="kontakt__item">
+              <h3 class="kontakt__label">E-mail</h3>
+              <p class="body-text">kontakt@PLACEHOLDERNAVN.dk</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .kontakt {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .kontakt__content {
+    margin-top: 40px;
+    max-width: 520px;
+  }
+
+  .kontakt__info {
+    margin-top: 40px;
+  }
+
+  .kontakt__item {
+    padding: 24px 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .kontakt__label {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 8px;
+  }
+</style>

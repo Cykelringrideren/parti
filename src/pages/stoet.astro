@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Støt os" description="Støt PLACEHOLDER NAVN med en donation og hjælp os med at skabe forandring.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Støt os</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Støt PLACEHOLDER NAVN</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          Dit bidrag gør en forskel. Økonomisk støtte gør det muligt for os at føre kampagne, udvikle politik og nå ud til flere danskere.
+        </p>
+      </div>
+    </section>
+
+    <section class="stoet-content">
+      <div class="container">
+        <div class="stoet-grid">
+          <div class="stoet-card">
+            <div class="stoet-card__bar" style="background: var(--color-red)"></div>
+            <h3 class="stoet-card__title">Engangsdonation</h3>
+            <p class="stoet-card__desc">Giv et enkelt bidrag til partiet. Ethvert beløb gør en forskel for vores arbejde.</p>
+            <p class="stoet-card__note">Betalingsoplysninger offentliggøres snart.</p>
+          </div>
+          <div class="stoet-card">
+            <div class="stoet-card__bar" style="background: var(--color-blue)"></div>
+            <h3 class="stoet-card__title">Fast støtte</h3>
+            <p class="stoet-card__desc">Bliv fast støtte med et månedligt bidrag og giv partiet et stabilt økonomisk fundament.</p>
+            <p class="stoet-card__note">Betalingsoplysninger offentliggøres snart.</p>
+          </div>
+          <div class="stoet-card">
+            <div class="stoet-card__bar" style="background: var(--color-green)"></div>
+            <h3 class="stoet-card__title">Anden støtte</h3>
+            <p class="stoet-card__desc">Du kan også støtte med din tid og dine evner. Kontakt os for at høre om frivillige muligheder.</p>
+            <a href="/kontakt" class="stoet-card__link">Kontakt os &rarr;</a>
+          </div>
+        </div>
+
+        <div class="stoet-info">
+          <h2 class="stoet-info__heading">Regler for partistøtte</h2>
+          <p class="body-text">
+            Alle donationer til danske politiske partier er underlagt lovgivningen om partistøtte. Bidrag over 22.200 kr. (2024-niveau) fra samme donor på ét år skal offentliggøres med navn. Læs mere om reglerne på vores side om <a href="/partistoette-og-regnskab">partistøtte og regnskab</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .stoet-content {
+    padding-bottom: 88px;
+  }
+
+  .stoet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .stoet-card {
+    padding: 32px;
+    background: var(--color-bg-alt);
+  }
+
+  .stoet-card__bar {
+    width: 32px;
+    height: 2px;
+    margin-bottom: 24px;
+  }
+
+  .stoet-card__title {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+  }
+
+  .stoet-card__desc {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+
+  .stoet-card__note {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .stoet-card__link {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-blue);
+  }
+
+  .stoet-info {
+    max-width: 640px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stoet-info__heading {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+  }
+</style>

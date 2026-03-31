@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Partistøtte og regnskab" description="Oplysninger om partistøtte og regnskab for PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Juridisk</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Partistøtte og regnskab</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="container">
+        <div class="legal-body">
+          <h2>Offentlighed om partistøtte</h2>
+          <p>I henhold til dansk lovgivning er politiske partier forpligtet til at offentliggøre bidrag fra private donorer, når bidragene overstiger den gældende beløbsgrænse. For 2024 er grænsen 22.200 kr. fra samme donor på ét regnskabsår.</p>
+          <p>PLACEHOLDER NAVN lever op til alle lovkrav om åbenhed omkring partistøtte og offentliggør donationer i overensstemmelse med partiregnskabsloven.</p>
+
+          <h2>Regnskab</h2>
+          <p>Partiets regnskab vil blive offentliggjort her, når det er revideret og godkendt. Regnskabet indsendes årligt til Folketinget i overensstemmelse med partiregnskabsloven.</p>
+
+          <h2>Offentlige tilskud</h2>
+          <p>Danske politiske partier, der har opnået mindst 1.000 stemmer ved seneste folketingsvalg, er berettiget til offentlig partistøtte. Oplysninger om eventuelle offentlige tilskud vil blive offentliggjort her.</p>
+
+          <h2>Kontakt</h2>
+          <p>Har du spørgsmål om partiets økonomi eller regnskab, kan du kontakte os på <strong>kontakt@PLACEHOLDERNAVN.dk</strong>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .legal-content {
+    padding-bottom: 88px;
+  }
+
+  .legal-body {
+    max-width: 640px;
+  }
+
+  .legal-body h2 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  .legal-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-body p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+</style>

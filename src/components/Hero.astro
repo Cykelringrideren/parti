@@ -1,0 +1,129 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero.png';
+---
+
+<section class="hero">
+  <Image
+    src={heroImage}
+    alt=""
+    class="hero__image"
+    widths={[640, 960, 1280, 1920]}
+    sizes="100vw"
+    loading="eager"
+  />
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <div class="hero__bars">
+      <span></span><span></span><span></span>
+    </div>
+    <h1 class="hero__title">
+      <span class="hero__line hero__line--1">Frihed. Tryghed.</span><br />
+      <span class="hero__line hero__line--2">Fællesskab.</span>
+    </h1>
+    <p class="hero__subtitle">
+      Et parti der forener personlig frihed og social tryghed med forpligtelsen over for dansk kultur, dansk natur og det fællesskab, der binder os sammen.
+    </p>
+    <div class="hero__actions">
+      <a href="/partiprogram" class="btn btn--primary">Læs partiprogrammet</a>
+      <a href="#bliv-medlem" class="btn btn--primary-filled">Bliv medlem</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes heroFade {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .hero {
+    position: relative;
+    height: 75vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(250, 250, 247, 0.3) 0%,
+      rgba(250, 250, 247, 0.5) 60%,
+      rgba(250, 250, 247, 1) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 64px;
+  }
+
+  .hero__bars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    animation: heroFade 0.5s ease both 0.1s;
+  }
+
+  .hero__bars span {
+    width: 32px;
+    height: 3px;
+  }
+
+  .hero__bars span:nth-child(1) { background: var(--color-red); }
+  .hero__bars span:nth-child(2) { background: var(--color-blue); }
+  .hero__bars span:nth-child(3) { background: var(--color-green); }
+
+  .hero__title {
+    font-family: var(--font-serif);
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 300;
+    color: var(--color-dark);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero__line {
+    display: inline-block;
+  }
+
+  .hero__line--1 { animation: heroFade 0.6s ease both 0.25s; }
+  .hero__line--2 { animation: heroFade 0.6s ease both 0.4s; }
+
+  .hero__subtitle {
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 300;
+    color: var(--color-text);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 36px;
+    animation: heroFade 0.6s ease both 0.55s;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: heroFade 0.6s ease both 0.7s;
+  }
+
+  @media (max-width: 640px) {
+    .hero { height: 85vh; }
+    .hero__actions { flex-direction: column; }
+    .hero__actions .btn { text-align: center; }
+  }
+</style>

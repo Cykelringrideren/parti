@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    question: "Hvordan kan I være både socialliberale og nationalkonservative?",
+    answer: [
+      "Det lyder som en modsætning, fordi vi er vant til at tænke politik i blokke. Liberalisme og konservatisme placeres begge på højrefløjen i dansk politik, men de trækker ofte i hver sin retning: markedsliberalismen vil nedbryde grænser, traditioner og fællesskaber i effektivitetens navn, mens konservatismen vil bevare dem. Og det socialliberale element i vores politik, med vægt på velfærdsstat, lige muligheder og individuelle rettigheder, hører traditionelt til venstre. Derfor virker kombinationen fremmed for dem, der tænker i blokke.",
+      "Vi løser den modsætning ved at definere begge dele ud fra den nordiske erfaring, ikke fra den amerikanske eller britiske. Vores socialliberalisme handler ikke om frie markeder, men om individuelle rettigheder og lige muligheder sikret af en stærk velfærdsstat. Vores nationalkonservatisme handler ikke om nationalisme eller nostalgi, men om at beskytte de kulturelle og institutionelle rammer, der gør den individuelle frihed mulig.",
+      "Modsætningen forsvinder, når man forstår sammenhængen: reel personlig frihed kræver social tryghed, og social tryghed kræver en sammenhængende kultur med høj tillid. Frihed uden fællesskab bliver til den stærkes ret. Fællesskab uden frihed bliver til tvang. Vi insisterer på begge dele, fordi de er hinandens forudsætninger."
+    ]
+  },
+  {
+    question: "Er I højre- eller venstreorienterede?",
+    answer: "PLACEHOLDER NAVN placerer sig bevidst uden for den traditionelle højre-venstre-akse. Vi forener socialliberal politik (stærk velfærdsstat, lige muligheder, individuelle rettigheder) med nationalkonservative værdier (kulturel sammenhængskraft, beskyttelse af danske institutioner) og grøn forankring. Vi mener, at de vigtigste politiske spørgsmål i dag ikke handler om højre mod venstre, men om at beskytte og videreudvikle det danske samfund."
+  },
+  {
+    question: "Hvad adskiller jer fra andre partier?",
+    answer: [
+      "De fleste danske partier vælger side. Den borgerlige fløj vil begrænse indvandring og forsvare individuel frihed, men importerer ukritisk amerikansk markedsliberalisme, privatiserer velfærd og lader teknologigiganter dominere dansk offentlighed. Venstrefløjen vil forsvare velfærdsstaten og bekæmpe ulighed, men nægter at stille kulturelle krav til integration og importerer amerikansk identitetspolitik, der splitter mere end den samler.",
+      "PLACEHOLDER NAVN ser det, som andre partier overser: at den nordiske model er truet fra to sider samtidig. Fra islamisk påvirkning, der bringer religiøs konservatisme og parallelsamfund. Og fra amerikanisering, der bringer markedsradikalisme, kulturel polarisering og nedbrydning af det, der gør Danmark til Danmark.",
+      "Vi er det parti, der forsvarer hele den nordiske model. Stram udlændingepolitik og stærk velfærdsstat. Individuel frihed og kulturel sammenhængskraft. Grøn naturpolitik i nærområdet og modstand mod klimapolitisk symbolpolitik. Økonomisk demokrati og modstand mod magtkoncentration, uanset om magten sidder hos staten eller hos kapitalejere.",
+      "Hos os behøver du ikke vælge mellem personlig frihed og social tryghed. Vi forsvarer begge dele, fordi de er hinandens forudsætninger."
+    ]
+  },
+  {
+    question: "Hvad mener I med amerikanisering?",
+    answer: "Vi bruger begrebet om den kulturelle, økonomiske og politiske påvirkning fra USA, der gradvist ændrer det danske samfund. Konkret handler det om privatisering af velfærd, markedsgørelse af uddannelse og sundhed, en konkurrencekultur der erstatter det danske samarbejde, identitetspolitik der opdeler borgere i grupper, digitale platforme der overtager den offentlige debat, og en underholdnings- og forbrugskultur der fortrænger dansk og nordisk kulturliv. Vi er ikke anti-amerikanske. USA er en vigtig sikkerhedspolitisk allieret. Men den amerikanske samfundsmodel er ikke vores, og vi skal aktivt modstå, at den importeres stykke for stykke."
+  },
+  {
+    question: "Er I imod indvandring?",
+    answer: "Vi er imod ukontrolleret indvandring fra kulturer med fundamentalt anderledes normer vedrørende individuel frihed, ligestilling og sekularisme. Argumentet er kulturelt, ikke etnisk. Den nordiske model bygger på en social kontrakt, der forudsætter fælles værdier. Indvandring, der reelt integreres i den kontrakt, er uproblematisk. Indvandring, der danner parallelsamfund med egne normer for køn, religion og social kontrol, er en trussel mod den frihed, vi forsvarer. Vi stiller krav, fordi vi tager vores værdier alvorligt."
+  },
+  {
+    question: "Hvad er økonomisk demokrati?",
+    answer: "Det er ideen om, at borgerne skal have indflydelse på de økonomiske strukturer, der former deres hverdag, ikke kun på de politiske. Konkret arbejder vi for medarbejderejerskab gennem overskudsdeling og medarbejderaktier, udvidet medarbejderrepræsentation i virksomhedernes bestyrelser, og skattemæssige incitamenter for virksomheder, der deler ejerskab med deres ansatte. Det er ikke de centraliserede lønmodtagerfonde fra 1970erne. Det er en decentral model, forankret i den enkelte virksomhed. Målet er at sprede økonomisk magt og gøre den enkelte borger mere uafhængig, både af staten og af kapitalejere."
+  },
+  {
+    question: "Hvordan forholder I jer til klimakrisen?",
+    answer: "Vi anerkender, at klimakrisen er reel. Men vores grønne profil handler først og fremmest om dansk natur i nærområdet: biodiversitet, rent drikkevand, sundt vandmiljø og et landbrug, der holder op med at forurene. Global klimapolitik er et anliggende for verdenssamfundet, ikke en opgave Danmark kan løse alene. Vi er skeptiske over for klimapolitisk symbolpolitik, hvor Danmark påtager sig uforholdsmæssige byrder uden global effekt. Vi støtter vedvarende energi og energiuafhængighed af pragmatiske grunde, men vi afviser, at klimapolitik bruges som løftestang for ideologiske samfundsændringer."
+  },
+  {
+    question: "Er I et religiøst parti?",
+    answer: "Nej. Vi er et sekulært parti. Vi forsvarer folkekirken som en kulturbærende institution og ramme om fællesskab og tradition, ikke som en religiøs autoritet. Religion skal ikke have indflydelse på lovgivning. Sekularisme er en nordisk kerneværdi, og vi forsvarer den lige så meget mod kristen fundamentalisme som mod islamisk konservatisme. Folkekirkens rolle i vores politik er kulturel og historisk, ikke teologisk."
+  },
+  {
+    question: "Hvordan forholder I jer til ytringsfrihed?",
+    answer: "Ytringsfrihed er en ufravigelig rettighed. Vi forsvarer den uden forbehold. Vores modstand mod identitetspolitik og kulturkampe handler netop om at beskytte den frie, åbne debat mod en importeret amerikansk logik, hvor bestemte synspunkter forsøges lukket ned gennem udskamning, afplatformering og sprogregulering. Universiteterne skal være steder for fri tænkning og videnskabelig uenighed. Den offentlige debat skal være åben for alle holdninger. Demokratiet styrkes af uenighed, ikke af konformitet."
+  },
+  {
+    question: "Hvordan kan jeg blive medlem?",
+    answer: "Du kan melde dig ind via vores side 'Bliv medlem'. Som medlem får du stemmeret, adgang til interne debatter og mulighed for at stille op som kandidat."
+  },
+  {
+    question: "Stiller I op til næste valg?",
+    answer: "Vi arbejder på at opbygge partiet og samle de nødvendige vælgererklæringer. Følg med på vores nyhedsside og nyhedsbrev for de seneste opdateringer."
+  },
+  {
+    question: "Kan jeg støtte jer økonomisk?",
+    answer: "Ja, du kan støtte PLACEHOLDER NAVN med en engangsdonation eller fast månedlig støtte. Se vores side 'Støt os' for mere information. Alle donationer er underlagt dansk lovgivning om partistøtte."
+  },
+  {
+    question: "Har I lokalafdelinger?",
+    answer: "Vi er i gang med at opbygge lokale afdelinger rundt om i Danmark. Hvis du vil starte en lokalafdeling i dit område, er du velkommen til at kontakte os."
+  },
+  {
+    question: "Hvad er jeres holdning til EU?",
+    answer: "Vi støtter et pragmatisk EU-samarbejde, der respekterer national suverænitet. Vi ønsker et EU, der fokuserer på de områder, hvor samarbejde giver mening, herunder handel, klima og sikkerhed, uden at undergrave medlemslandenes selvbestemmelse."
+  }
+];
+---
+
+<Layout title="Spørgsmål og svar" description="Spørgsmål og svar om PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Spørgsmål og svar</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Spørgsmål og svar</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="faq-content">
+      <div class="container">
+        <div class="faq-list">
+          {faqs.map(faq => (
+            <details class="faq-item">
+              <summary class="faq-item__question">{faq.question}</summary>
+              <div class="faq-item__answer">
+                {Array.isArray(faq.answer)
+                  ? faq.answer.map(p => <p>{p}</p>)
+                  : <p>{faq.answer}</p>
+                }
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <div class="faq-cta">
+          <p class="body-text">Har du et spørgsmål, der ikke er besvaret her?</p>
+          <a href="/kontakt" class="btn btn--primary" style="margin-top: 16px;">Kontakt os</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .faq-content {
+    padding-bottom: 88px;
+  }
+
+  .faq-list {
+    max-width: 700px;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item__question {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-item__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__question::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--color-muted);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+
+  .faq-item[open] .faq-item__question::after {
+    content: '\2212';
+  }
+
+  .faq-item__answer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 24px;
+    max-width: 620px;
+  }
+
+  .faq-item__answer p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-weight: 300;
+  }
+
+  .faq-cta {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+    max-width: 700px;
+  }
+</style>

@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { chapters } from '../../data/partiprogram'; // updated
+
+export function getStaticPaths() {
+  return chapters.map(chapter => ({
+    params: { slug: chapter.slug },
+    props: { chapter },
+  }));
+}
+
+const { chapter } = Astro.props;
+
+const currentIndex = chapters.findIndex(c => c.slug === chapter.slug);
+const prev = currentIndex > 0 ? chapters[currentIndex - 1] : null;
+const next = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
+---
+
+<Layout title={chapter.title} description={chapter.summary}>
+  <Header />
+  <main>
+    <article class="chapter">
+      <div class="container">
+        <a href="/partiprogram" class="chapter__back">&larr; Tilbage til partiprogram</a>
+        <p class="section-label">{chapter.number}</p>
+        <h1 class="chapter__title">{chapter.title}</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+
+        <div class="chapter__content">
+          {chapter.content && chapter.content.length > 0 && (
+            chapter.content.map(p => <p class="body-text">{p}</p>)
+          )}
+
+          {chapter.subheadings && chapter.subheadings.map(sub => (
+            <div class="chapter__sub">
+              {sub.title && <h2 class="chapter__sub-title">{sub.title}</h2>}
+              {sub.paragraphs.map(p => <p class="body-text">{p}</p>)}
+            </div>
+          ))}
+        </div>
+
+        <nav class="chapter__nav">
+          {prev && (
+            <a href={`/partiprogram/${prev.slug}`} class="chapter__nav-link chapter__nav-link--prev">
+              <span class="chapter__nav-label">&larr; Forrige</span>
+              <span class="chapter__nav-title">{prev.number} {prev.title}</span>
+            </a>
+          )}
+          {next && (
+            <a href={`/partiprogram/${next.slug}`} class="chapter__nav-link chapter__nav-link--next">
+              <span class="chapter__nav-label">Næste &rarr;</span>
+              <span class="chapter__nav-title">{next.number} {next.title}</span>
+            </a>
+          )}
+        </nav>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .chapter {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .chapter__back {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+
+  .chapter__back:hover {
+    color: var(--color-dark);
+  }
+
+  .chapter__title {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 300;
+    color: var(--color-dark);
+    line-height: 1.2;
+  }
+
+  .chapter__content {
+    margin-top: 40px;
+  }
+
+  .chapter__content :global(.body-text) {
+    margin-bottom: 20px;
+  }
+
+  .chapter__sub {
+    margin-bottom: 40px;
+  }
+
+  .chapter__sub-title {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+  }
+
+  .chapter__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-border);
+    flex-wrap: wrap;
+  }
+
+  .chapter__nav-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .chapter__nav-link--next {
+    margin-left: auto;
+    text-align: right;
+  }
+
+  .chapter__nav-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  .chapter__nav-title {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-dark);
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SignupForm from '../components/SignupForm.astro';
+---
+
+<Layout title="Bliv medlem" description="Bliv medlem af PLACEHOLDER NAVN og vær med til at forme fremtidens Danmark.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Bliv medlem</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Bliv en del af fællesskabet</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          Som medlem af PLACEHOLDER NAVN er du med til at bestemme partiets retning, deltage i debatter og stille op som kandidat. Sammen former vi fremtidens Danmark.
+        </p>
+      </div>
+    </section>
+
+    <section class="medlem-content">
+      <div class="container">
+        <div class="medlem-grid">
+          <div class="medlem-info">
+            <h2 class="medlem-info__heading">Hvad får du som medlem?</h2>
+            <ul class="medlem-info__list">
+              <li>Stemmeret ved generalforsamlinger og afstemninger</li>
+              <li>Mulighed for at stille op som kandidat</li>
+              <li>Adgang til interne debatter og arbejdsgrupper</li>
+              <li>Nyhedsbrev med de seneste politiske udmeldinger</li>
+              <li>Indflydelse på partiets politik og program</li>
+            </ul>
+
+            <h2 class="medlem-info__heading" style="margin-top: 40px;">Kontingent</h2>
+            <p class="body-text">Oplysninger om kontingent og betalingsmuligheder offentliggøres snart.</p>
+          </div>
+
+          <div class="medlem-form-wrapper">
+            <SignupForm variant="medlem" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .medlem-content {
+    padding-bottom: 88px;
+  }
+
+  .medlem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .medlem-info__heading {
+    font-family: var(--font-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 16px;
+  }
+
+  .medlem-info__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .medlem-info__list li {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-weight: 300;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .medlem-info__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 8px;
+    height: 2px;
+    background: var(--color-red);
+  }
+
+  @media (max-width: 640px) {
+    .medlem-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

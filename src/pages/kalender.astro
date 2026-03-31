@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kalender" description="Kommende arrangementer og begivenheder fra PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Kalender</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Arrangementer</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          Find kommende arrangementer, møder og debatter i PLACEHOLDER NAVN.
+        </p>
+      </div>
+    </section>
+
+    <section class="kalender-content">
+      <div class="container">
+        <div class="kalender-placeholder">
+          <div class="kalender-placeholder__icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="body-text" style="text-align: center; max-width: 420px; margin: 0 auto;">
+            Der er endnu ingen kommende arrangementer. Tilmeld dig vores nyhedsbrev for at få besked om kommende begivenheder.
+          </p>
+          <div style="text-align: center; margin-top: 24px;">
+            <a href="/nyheder" class="btn btn--primary">Tilmeld nyhedsbrev</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .kalender-content {
+    padding-bottom: 88px;
+  }
+
+  .kalender-placeholder {
+    padding: 64px 32px;
+    background: var(--color-bg-alt);
+    text-align: center;
+  }
+
+  .kalender-placeholder__icon {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .kalender-placeholder__icon span {
+    width: 4px;
+    height: 24px;
+  }
+
+  .kalender-placeholder__icon span:nth-child(1) { background: var(--color-red); }
+  .kalender-placeholder__icon span:nth-child(2) { background: var(--color-blue); }
+  .kalender-placeholder__icon span:nth-child(3) { background: var(--color-green); }
+</style>

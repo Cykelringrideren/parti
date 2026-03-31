@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Mennesker" description="Mød menneskerne bag PLACEHOLDER NAVN: ledelse, kandidater og bestyrelse.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Mennesker</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Menneskerne bag partiet</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+        <p class="body-text" style="max-width: 580px;">
+          PLACEHOLDER NAVN er drevet af mennesker med en fælles forpligtelse over for det danske samfund. Her kan du møde ledelsen, kandidaterne og bestyrelsen.
+        </p>
+      </div>
+    </section>
+
+    <section class="people-section">
+      <div class="container--wide">
+        <h2 class="people-group-title">Ledelse</h2>
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Partiformand</p>
+            <p class="person-card__bio">Oplysninger om partiets formand vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Næstformand</p>
+            <p class="person-card__bio">Oplysninger om partiets næstformand vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Partisekretær</p>
+            <p class="person-card__bio">Oplysninger om partiets sekretær vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Kasserer</p>
+            <p class="person-card__bio">Oplysninger om partiets kasserer vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Kommunikationsansvarlig</p>
+            <p class="person-card__bio">Oplysninger om den kommunikationsansvarlige vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Politisk ordfører</p>
+            <p class="person-card__bio">Oplysninger om den politiske ordfører vil blive offentliggjort her.</p>
+          </div>
+        </div>
+
+        <h2 class="people-group-title">Bestyrelse</h2>
+        <div class="people-grid">
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Bestyrelsesmedlem</p>
+            <p class="person-card__bio">Oplysninger om bestyrelsesmedlemmet vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Bestyrelsesmedlem</p>
+            <p class="person-card__bio">Oplysninger om bestyrelsesmedlemmet vil blive offentliggjort her.</p>
+          </div>
+          <div class="person-card">
+            <div class="person-card__photo-placeholder"></div>
+            <h3 class="person-card__name">Kommer snart</h3>
+            <p class="person-card__role">Bestyrelsesmedlem</p>
+            <p class="person-card__bio">Oplysninger om bestyrelsesmedlemmet vil blive offentliggjort her.</p>
+          </div>
+        </div>
+
+        <h2 class="people-group-title">Kandidater</h2>
+        <p class="body-text" style="margin-bottom: 40px;">Kandidater til kommende valg vil blive præsenteret her, når de er opstillet.</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .people-section {
+    padding-bottom: 88px;
+  }
+
+  .people-group-title {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 32px;
+    margin-top: 48px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .people-group-title:first-child {
+    margin-top: 0;
+  }
+
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .person-card {
+    padding: 32px;
+    background: var(--color-bg-alt);
+  }
+
+  .person-card__photo-placeholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-border);
+    margin-bottom: 20px;
+  }
+
+  .person-card__name {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 4px;
+  }
+
+  .person-card__role {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-red);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+
+  .person-card__bio {
+    font-family: var(--font-serif);
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-weight: 300;
+  }
+</style>

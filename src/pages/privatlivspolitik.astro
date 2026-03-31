@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privatlivspolitik" description="Privatlivspolitik for PLACEHOLDER NAVN.">
+  <Header />
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <p class="section-label">Juridisk</p>
+        <h1 class="section-title" style="font-size: clamp(32px, 5vw, 48px);">Privatlivspolitik</h1>
+        <div class="divider-tri"><span></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="container">
+        <div class="legal-body">
+          <h2>Dataansvarlig</h2>
+          <p>PLACEHOLDER NAVN er dataansvarlig for behandlingen af de personoplysninger, som vi modtager om dig. Kontakt os på kontakt@PLACEHOLDERNAVN.dk med spørgsmål om vores behandling af dine personoplysninger.</p>
+
+          <h2>Hvilke personoplysninger behandler vi?</h2>
+          <p>Vi behandler følgende kategorier af personoplysninger:</p>
+          <ul>
+            <li>Navn og kontaktoplysninger (e-mail, telefon, adresse) ved indmeldelse</li>
+            <li>E-mailadresse ved tilmelding til nyhedsbrev</li>
+            <li>Oplysninger om donationer i overensstemmelse med partistøtteloven</li>
+          </ul>
+
+          <h2>Formål med behandlingen</h2>
+          <p>Vi behandler dine personoplysninger til følgende formål:</p>
+          <ul>
+            <li>Administration af medlemskab</li>
+            <li>Udsendelse af nyhedsbrev og information om partiets aktiviteter</li>
+            <li>Overholdelse af lovgivning om partistøtte og regnskab</li>
+          </ul>
+
+          <h2>Retsgrundlag</h2>
+          <p>Behandlingen af dine personoplysninger sker på baggrund af dit samtykke (GDPR art. 6, stk. 1, litra a) samt retlige forpligtelser (GDPR art. 6, stk. 1, litra c) for så vidt angår lovpligtige oplysninger om partistøtte.</p>
+
+          <h2>Opbevaring</h2>
+          <p>Vi opbevarer dine personoplysninger, så længe det er nødvendigt for det formål, de er indsamlet til. Medlemsoplysninger slettes, når medlemskabet ophører, medmindre lovgivningen kræver længere opbevaring.</p>
+
+          <h2>Dine rettigheder</h2>
+          <p>Du har ret til at:</p>
+          <ul>
+            <li>Få indsigt i de personoplysninger, vi behandler om dig</li>
+            <li>Få rettet urigtige oplysninger</li>
+            <li>Få slettet dine oplysninger</li>
+            <li>Trække dit samtykke tilbage</li>
+            <li>Klage til Datatilsynet</li>
+          </ul>
+
+          <h2>Kontakt</h2>
+          <p>Har du spørgsmål til vores behandling af personoplysninger, kan du kontakte os på <strong>kontakt@PLACEHOLDERNAVN.dk</strong>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  .legal-content {
+    padding-bottom: 88px;
+  }
+
+  .legal-body {
+    max-width: 640px;
+  }
+
+  .legal-body h2 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  .legal-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-body p {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .legal-body ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 12px;
+  }
+
+  .legal-body li {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-text);
+    font-weight: 300;
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .legal-body li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 8px;
+    height: 2px;
+    background: var(--color-border);
+  }
+</style>
