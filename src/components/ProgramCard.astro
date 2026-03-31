@@ -7,9 +7,10 @@ interface Props {
 }
 
 const { number, title, summary, slug } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
-<a href={`/partiprogram/${slug}`} class="program-card">
+<a href={`${base}partiprogram/${slug}`} class="program-card">
   <span class="program-card__number">{number}</span>
   <div>
     <h3 class="program-card__title">{title}</h3>

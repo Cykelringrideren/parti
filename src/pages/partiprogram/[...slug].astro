@@ -44,13 +44,13 @@ const base = import.meta.env.BASE_URL;
 
         <nav class="chapter__nav">
           {prev && (
-            <a href={`/partiprogram/${prev.slug}`} class="chapter__nav-link chapter__nav-link--prev">
+            <a href={`${base}partiprogram/${prev.slug}`} class="chapter__nav-link chapter__nav-link--prev">
               <span class="chapter__nav-label">&larr; Forrige</span>
               <span class="chapter__nav-title">{prev.number} {prev.title}</span>
             </a>
           )}
           {next && (
-            <a href={`/partiprogram/${next.slug}`} class="chapter__nav-link chapter__nav-link--next">
+            <a href={`${base}partiprogram/${next.slug}`} class="chapter__nav-link chapter__nav-link--next">
               <span class="chapter__nav-label">Næste &rarr;</span>
               <span class="chapter__nav-title">{next.number} {next.title}</span>
             </a>
