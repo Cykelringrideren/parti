@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Vedtægter" description="PLACEHOLDER NAVNs vedtægter og organisationsstruktur.">
@@ -22,7 +23,7 @@ import Footer from '../components/Footer.astro';
             PLACEHOLDER NAVNs vedtægter og organisationsstruktur vil blive offentliggjort her, når de er vedtaget af generalforsamlingen.
           </p>
           <p class="body-text" style="margin-top: 16px;">
-            Har du spørgsmål om organisationen? <a href="/kontakt">Kontakt os</a>.
+            Har du spørgsmål om organisationen? <a href={`${base}kontakt`}>Kontakt os</a>.
           </p>
         </div>
       </div>

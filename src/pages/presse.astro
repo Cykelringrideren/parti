@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Presse" description="Pressemateriale fra PLACEHOLDER NAVN: logo, pressefotos og standardtekster.">
@@ -26,33 +27,33 @@ import Footer from '../components/Footer.astro';
 
           <div class="logo-previews">
             <div class="logo-preview logo-preview--light">
-              <img src="/logo/logo-fuld-lys-outlined.svg" alt="PLACEHOLDER NAVN logo, lys baggrund" />
+              <img src={`${base}logo/logo-fuld-lys-outlined.svg`} alt="PLACEHOLDER NAVN logo, lys baggrund" />
             </div>
             <div class="logo-preview logo-preview--dark">
-              <img src="/logo/logo-fuld-moerk-outlined.svg" alt="PLACEHOLDER NAVN logo, mørk baggrund" />
+              <img src={`${base}logo/logo-fuld-moerk-outlined.svg`} alt="PLACEHOLDER NAVN logo, mørk baggrund" />
             </div>
           </div>
 
           <div class="download-grid">
             <div class="download-group">
               <p class="download-group__label">Lys baggrund</p>
-              <a href="/logo/logo-fuld-lys-outlined.svg" download class="download-link">SVG</a>
-              <a href="/logo/logo-fuld-lys-outlined-1280.png" download class="download-link">PNG 1280px</a>
+              <a href={`${base}logo/logo-fuld-lys-outlined.svg`} download class="download-link">SVG</a>
+              <a href={`${base}logo/logo-fuld-lys-outlined-1280.png`} download class="download-link">PNG 1280px</a>
             </div>
             <div class="download-group">
               <p class="download-group__label">Mørk baggrund</p>
-              <a href="/logo/logo-fuld-moerk-outlined.svg" download class="download-link">SVG</a>
-              <a href="/logo/logo-fuld-moerk-outlined-1280.png" download class="download-link">PNG 1280px</a>
+              <a href={`${base}logo/logo-fuld-moerk-outlined.svg`} download class="download-link">SVG</a>
+              <a href={`${base}logo/logo-fuld-moerk-outlined-1280.png`} download class="download-link">PNG 1280px</a>
             </div>
             <div class="download-group">
               <p class="download-group__label">Print</p>
-              <a href="/logo/logo-print-outlined.svg" download class="download-link">SVG</a>
-              <a href="/logo/logo-print-outlined-2400.png" download class="download-link">PNG 2400px</a>
+              <a href={`${base}logo/logo-print-outlined.svg`} download class="download-link">SVG</a>
+              <a href={`${base}logo/logo-print-outlined-2400.png`} download class="download-link">PNG 2400px</a>
             </div>
             <div class="download-group">
               <p class="download-group__label">Ikon</p>
-              <a href="/logo/logo-ikon.svg" download class="download-link">SVG</a>
-              <a href="/logo/logo-ikon-512.png" download class="download-link">PNG 512px</a>
+              <a href={`${base}logo/logo-ikon.svg`} download class="download-link">SVG</a>
+              <a href={`${base}logo/logo-ikon-512.png`} download class="download-link">PNG 512px</a>
             </div>
           </div>
         </div>

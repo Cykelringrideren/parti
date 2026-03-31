@@ -16,6 +16,7 @@ const { chapter } = Astro.props;
 const currentIndex = chapters.findIndex(c => c.slug === chapter.slug);
 const prev = currentIndex > 0 ? chapters[currentIndex - 1] : null;
 const next = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={chapter.title} description={chapter.summary}>
@@ -23,7 +24,7 @@ const next = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : n
   <main>
     <article class="chapter">
       <div class="container">
-        <a href="/partiprogram" class="chapter__back">&larr; Tilbage til partiprogram</a>
+        <a href={`${base}partiprogram`} class="chapter__back">&larr; Tilbage til partiprogram</a>
         <p class="section-label">{chapter.number}</p>
         <h1 class="chapter__title">{chapter.title}</h1>
         <div class="divider-tri"><span></span><span></span><span></span></div>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Kalender" description="Kommende arrangementer og begivenheder fra PLACEHOLDER NAVN.">
@@ -28,7 +29,7 @@ import Footer from '../components/Footer.astro';
             Der er endnu ingen kommende arrangementer. Tilmeld dig vores nyhedsbrev for at få besked om kommende begivenheder.
           </p>
           <div style="text-align: center; margin-top: 24px;">
-            <a href="/nyheder" class="btn btn--primary">Tilmeld nyhedsbrev</a>
+            <a href={`${base}nyheder`} class="btn btn--primary">Tilmeld nyhedsbrev</a>
           </div>
         </div>
       </div>

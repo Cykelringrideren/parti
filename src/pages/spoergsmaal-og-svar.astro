@@ -70,6 +70,7 @@ const faqs = [
     answer: "Vi støtter et pragmatisk EU-samarbejde, der respekterer national suverænitet. Vi ønsker et EU, der fokuserer på de områder, hvor samarbejde giver mening, herunder handel, klima og sikkerhed, uden at undergrave medlemslandenes selvbestemmelse."
   }
 ];
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Spørgsmål og svar" description="Spørgsmål og svar om PLACEHOLDER NAVN.">
@@ -101,7 +102,7 @@ const faqs = [
 
         <div class="faq-cta">
           <p class="body-text">Har du et spørgsmål, der ikke er besvaret her?</p>
-          <a href="/kontakt" class="btn btn--primary" style="margin-top: 16px;">Kontakt os</a>
+          <a href={`${base}kontakt`} class="btn btn--primary" style="margin-top: 16px;">Kontakt os</a>
         </div>
       </div>
     </section>

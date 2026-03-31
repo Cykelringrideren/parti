@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import ProgramCard from '../../components/ProgramCard.astro';
 import { chapters } from '../../data/partiprogram';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Partiprogram" description="Læs Læs PLACEHOLDER NAVNs partiprogram, vores politik for frihed, tryghed og fællesskab.">
@@ -17,7 +18,7 @@ import { chapters } from '../../data/partiprogram';
         <p class="body-text" style="max-width: 580px;">
           PLACEHOLDER NAVNs partiprogram i 14 kapitler. Klik på et kapitel for at læse mere.
         </p>
-        <a href="/partiprogram.pdf" download class="btn btn--primary" style="margin-top: 24px;">Hent partiprogram (PDF)</a>
+        <a href={`${base}partiprogram.pdf`} download class="btn btn--primary" style="margin-top: 24px;">Hent partiprogram (PDF)</a>
       </div>
     </section>
 

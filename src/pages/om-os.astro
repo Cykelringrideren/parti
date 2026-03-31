@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Om os" description="Lær mere om PLACEHOLDER NAVN: vores historie, ideologiske fundament og hvorfor vi eksisterer.">
@@ -48,8 +49,8 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <div class="about-cta">
-          <a href="/partiprogram" class="btn btn--primary">Læs partiprogrammet</a>
-          <a href="/mennesker" class="btn btn--secondary">Mød vores mennesker</a>
+          <a href={`${base}partiprogram`} class="btn btn--primary">Læs partiprogrammet</a>
+          <a href={`${base}mennesker`} class="btn btn--secondary">Mød vores mennesker</a>
         </div>
       </div>
     </section>

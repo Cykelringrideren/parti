@@ -44,7 +44,13 @@
       "Bash(powershell -Command \"Stop-Process -Id 21468 -Force -ErrorAction SilentlyContinue; Start-Sleep -Seconds 1; \\(Get-NetTCPConnection -LocalPort 4321 -ErrorAction SilentlyContinue\\).Count\")",
       "Bash(powershell -Command \"Get-NetTCPConnection -LocalPort 4321 -ErrorAction SilentlyContinue | Select-Object LocalPort,State,OwningProcess | Format-Table\")",
       "Bash(xargs sed:*)",
-      "Bash(grep -ri 'frit f' 'C:/Users/askeu/Desktop/Frit Fællesskab/' --include=*.json --include=*.ts --include=*.js --include=*.mjs --include=*.astro)"
+      "Bash(grep -ri 'frit f' 'C:/Users/askeu/Desktop/Frit Fællesskab/' --include=*.json --include=*.ts --include=*.js --include=*.mjs --include=*.astro)",
+      "Bash(gh run:*)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:cykelringrideren.github.io)",
+      "Bash(npm run:*)",
+      "Bash(unzip -l \"C:/Users/askeu/Downloads/logs_62751199038 \\(1\\).zip\")",
+      "Bash(unzip -p \"C:/Users/askeu/Downloads/logs_62751199038 \\(1\\).zip\" \"build/3_Install, build, and upload.txt\")"
     ]
   }
 }
